@@ -1,45 +1,68 @@
 function getComputerChoice(){
-    const computerPick = ["rock", "paper", "scissors"];
-    const randomNum = Math.floor(Math.random()*3);
-    return computerPick[randomNum];
+    const computerChoices = ["rock", "paper", "scissors"];
+    const randomCompPick = computerChoices[Math.floor(Math.random()*computerChoices.length)];
+    return randomCompPick;
      }
  
  function playerChoice(){
    let playerPick = prompt("what is your selection, Rock,Paper or Scissors?");
    playerPick = playerPick.toLowerCase();
  
-   return playerPick 
+   return playerPick; 
  }
- let computerScore = 0;
- let playerScore = 0;
- function playRound(playerSelection, computerSelection) {
-   if(playerSelection == computerSelection){
-     console.log("It is a Draw");
-     computerScore++;
-     playerScore++;
-   }else if(playerSelection == "rock" && computerSelection == "paper"){
-     console.log("comp wins")
-    computerScore++;
-   }else if(playerSelection == "rock" && computerSelection == "scissors"){
-     console.log("you win")
-     playerScore++;
-   }else if(computerSelection == "rock" && playerSelection == "paper"){
-     console.log("You win")
-     playerScore++;
-   }else if(computerSelection == "rock" && playerSelection == "scissors"){
-     console.log("Comp wins")
-     computerScore++;
-   }else if(playerSelection == "paper" && computerSelection == "scissors"){
-     console.log("comp wins")
-    computerScore++;
-   }else if(computerSelection == "paper" && playerSelection == "scissors"){
-     console.log("Comp wins")
-     computerScore++;
-   }
- }
- var playerSelection = playerChoice();
- var computerSelection = getComputerChoice();
- console.log(playerSelection, computerSelection);
- console.log(playRound(playerSelection, computerSelection));
- console.log(playerScore);
- console.log(computerScore);
+ 
+
+ function checkWinner(computerSelection,playerSelection){
+
+  if(playerSelection == computerSelection){
+    return "tie";
+  }else if(
+          (playerSelection == 'rock' && computerSelection == 'scissors') ||
+          (playerSelection == 'paper' && computerSelection == 'rock')  ||
+          (playerSelection == 'scissors' && computerSelection == 'paper')
+  ){
+    return "player";
+  }else {
+    return "computer";
+  }
+  };
+
+function playRound(computerSelection, playerSelection){
+  const results = checkWinner(computerSelection,playerSelection);
+
+  if(results == 'tie'){ 
+    return 'It is a draw'
+  }else if(results == 'player'){
+    return `player won!!!!!!"${playerSelection}" beats ${computerSelection}`;
+  }else{ 
+    return `you lose!!!! "${computerSelection}" beats ${playerSelection}`;
+  }
+}
+
+
+
+function game(){
+  let playerScore = 0;
+  let computerScore =0;
+  for( let i=0; i <5 ; i++){
+    const playerSelection = playerChoice();
+    const computerSelection = getComputerChoice();
+    console.log(playRound(computerSelection,playerSelection))
+    if(checkWinner(computerSelection,playerSelection) == 'player'){
+      playerScore++;
+    }else if(checkWinner(computerSelection,playerSelection) == 'computer'){
+      computerScore++;
+    }
+    
+  };
+  console.log("End of game");
+  if(playerScore > computerScore){
+    console.log("Nyang'au imeshinda");
+  }else if(computerScore > playerScore){
+    console.log(" wewe! Enda mtaa");
+  } else{
+    console.log("Its a tie");
+  }
+}
+
+game();
