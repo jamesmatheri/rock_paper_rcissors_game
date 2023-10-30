@@ -4,9 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
    
 </head>
 <body>
+    <header>
+        <h1>HEAD-PAPER-SCISSORS</h1>
+    </header>
+    <main>
+       <div>
+        <h1>You Won!</h1>
+        <p>first to score 5  Points</p>
+       </div>
+       
+       <div  id="selected">
+        <div>
+            <div id="user-choice"></div>
+            <span>Player:5</span>
+           </div>
+           
+           <div id="learn" style="display: none;"></div>
+           <div>
+            <div id="comp-choice"></div>
+            <span>Computer:5</span>
+           </div>
+       </div>
+
+       <div id="choices">
+        <div id="r"></div>
+        <div id="p"></div>
+        <div id="s"></div>
+       </div>
+    </main>
     <script src="app.js"></script>
 </body>
 </html>

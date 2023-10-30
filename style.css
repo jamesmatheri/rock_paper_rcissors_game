@@ -1,0 +1,104 @@
+body{
+    margin: 0;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px minmax(100vh, 1fr);
+}
+
+header{
+    grid-row: 1/2;
+    background-color: rgb(127, 72, 72);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    grid-row: 2/3;
+    color: black;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image{
+    width: 250px;
+    height: 250px;
+}
+
+#choices{
+    display: flex;
+}
+
+#user-choice{
+    width: 280px;
+    height: 280px;
+    background: url(./icons/noun-scissors-477919.svg);
+    background-position: 20px 70px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+#selected span:nth-child(2){
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#comp-choice{
+    width: 280px;
+    height: 280px;
+    background: url(./icons/noun-scissors-477919.svg);
+    background-position: 20px 70px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+#selected span:first-child{
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#selected{
+    display: flex;
+    margin-bottom: 30px;
+}
+
+#r{
+    width: 350px;
+    height: 350px;
+    background: url(./icons/noun-fist-477914.svg);
+    background-position: 0px 50px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+#p{
+    width: 350px;
+    height: 350px;
+    background: url(./icons/noun-hand-477922.svg);
+    background-position: 0px 50px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+#s{
+    width: 350px;
+    height: 350px;
+    background: url(./icons/noun-scissors-477919.svg);
+    background-position: 0px 50px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+
+#learn{
+    height: 300px;
+    width: 300px;
+    border: 4px solid black;
+}
