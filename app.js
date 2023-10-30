@@ -1,4 +1,68 @@
-function getComputerChoice(){
+
+// DOM caching
+
+const announceWin_h1 = document.querySelector('#announce-won');
+const trackPoints_p = document.querySelector('#track-points');
+const userChoice_div =document.querySelector('#user-choice');
+const playerScore_span = document.querySelector('#player-score');
+const compChoice_div = document.querySelector('#comp-choice');
+const computerScore_span = document.querySelector('#computer-score');
+const choice = document.querySelectorAll('#choices div')
+const rock = document.querySelector('#r');
+const paper = document.querySelector('#p')
+const scissors = document.querySelector('#s')
+
+
+// get user choice
+
+Array.from(choice).forEach(btn =>{
+  btn.addEventListener('click', userChoice)
+})
+
+function userChoice(btn){
+  return btn.target.id;
+}
+
+//get computer choice
+
+function computerChoice(){
+  const choices = [rock,paper,scissors];
+  const randomComputerChoice = choices[Math.floor(Math.random()*choices.length)];
+  console.log(randomComputerChoice.id);
+
+}
+computerChoice();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*function getComputerChoice(){
     const computerChoices = ["rock", "paper", "scissors"];
     const randomCompPick = computerChoices[Math.floor(Math.random()*computerChoices.length)];
     return randomCompPick;
@@ -66,3 +130,4 @@ function game(){
 }
 
 game();
+*/
