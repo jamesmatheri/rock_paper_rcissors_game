@@ -34,13 +34,30 @@ main{
     display: flex;
 }
 
+#selected div:first-child,
+#selected div:nth-child(3){
+    margin: 30px;  
+}
+
 #user-choice{
     width: 280px;
     height: 280px;
-    background: url(./icons/noun-scissors-477919.svg);
-    background-position: 20px 70px;
+    background-position: 20px 50px;
     overflow: hidden;
     background-repeat: no-repeat;
+    border: 4px solid black;
+    border-radius: 100%;
+    
+}
+
+.rock{
+    background: url(./icons/noun-fist-477914.svg);
+}
+.paper{
+    background: url(./icons/noun-hand-477922.svg);
+}
+.scissors{
+    background: url(./icons/noun-scissors-477919.svg);
 }
 
 #selected span:nth-child(2){
@@ -52,10 +69,11 @@ main{
 #comp-choice{
     width: 280px;
     height: 280px;
-    background: url(./icons/noun-scissors-477919.svg);
-    background-position: 20px 70px;
+    background-position: 20px 50px;
     overflow: hidden;
     background-repeat: no-repeat;
+    border: 4px solid black;
+    border-radius: 100%
 }
 
 #selected span:first-child{
@@ -97,8 +115,18 @@ main{
 }
 
 
-#learn{
+#start{
     height: 300px;
     width: 300px;
-    border: 4px solid black;
+    font-size: 20px;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+#choices div{
+    border: none;
+    border-radius: 7px;
+    margin: 0px 30px;
+    background-color: #94a3b8;
+    box-shadow: 0px 0px 10px 3px #0f172a;
 }
